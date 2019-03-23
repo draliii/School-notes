@@ -1,0 +1,37 @@
+ILP Vyjádření logických formulí
+
+Ve slajdech pana prof. Hanzálka je v ILP příkladu, investice do nemovitostí, vyjádření podmínek pomocí logických formulí. Např. „jestliže je dům 1 vybrán, potom není vybrán dům 3“. Uvedený způsob kreslení pomocí přímky je krapet složitější při konstrukci z více proměnných, či „zakázaných“ kombinací je více než jedna.
+
+Zde bude nastíněn universální přístup na příkladu ze slajdů, který by měl být podproben kritice, neb není dokázán.
+
+1) Z pravdivostní tabulky vyberte řádek, který má hodnotu 0 a zapište ho jako maxterm. (součtová forma a + b + c). Maxterm je vyjádřen podobně jako u Karn. map. Když je v proměnné 1, značí negaci proměnné.
+
+2) Výsledný maxterm nám říká; tato kombinace se rovná nepřípustné vlastnosti. Položíme nerovnost a negace proměnných nahradíme výrazem (1 - x).
+
+3) Rozepíšeme rovnici na formu vhodnou do ILP. Podmínka x != y je ekvivaletní |x - y| >= 1 (možné jsou pouze celočíslené proměnné). Vzhledem k nulovosti y se podmínka redukuje na |x| >= 1. Vypočteme dva případy, -(x) >= 1 a (x) >= 1. Pokud některá z rovnic je nesplnitelná (za x lze dosazovat pouze 0 nebo 1), případně splnitelná vždy, neuvažujeme ji.
+Příklad ze slajdů
+
+a) jestliže je dům 1 vybrán, potom není vybrán dům 3
+Tabulka má 0 v řádká x1 = 1, x3 = 1.
+Vytvoříme maxterm (1-x1)+(1-x3) != 0,
+|(1-x1)+(1-x3)| >= 1
+1) 1-x1+1-x3 >= 1 ===> -x1-x3 >= -1 ===> x1 + x3 <= 1
+2) -(1-x1+1-x3) >= 1 ===> -2 + x1 + x3 >= 1 ===> x1 + x3 >= 3, nelze splnit
+Řešení 1)
+
+b)jestliže je dům 2 vybrán, potom musí být vybrán i dům 1
+(x1)+(1-x2) != 0 ===> |(x1)+(1-x2)| >= 1
+1) (x1)+(1-x2) >= 1 ===> x1 - x2 >= 0
+2) -((x1)+(1-x2)) >= 1 ===> -x1 + x2 >= 2, nelze splnit
+Řešení 1)
+
+c) buď je vybrán dům 4 nebo dům 5, ale ne oba
+Zde jsou dvě možnosti, budou čtyři výsledné nerovnice
+(x4)+(x5) != 0 ===> |(x4)+(x5)| >= 1
+(1-x4)+(1-x5) != 0 ===> |(1-x4)+(1-x5)| >= 1
+1) x4 + x5 >= 1
+2) -x4 -x5 >= 1, nelze splnit
+3) (1-x4)+(1-x5) >= 1 ===> -x4 – x5 >= -1 ===> x4 + x5 <= 1
+4) -1+ x4 – 1 + x5 >= 1 ===> x4 + x5 >= 3, nelze splnit
+z 1) a 3) vyplývá x4 + x5 = 1
+

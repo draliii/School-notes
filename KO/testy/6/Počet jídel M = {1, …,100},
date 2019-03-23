@@ -1,0 +1,13 @@
+Počet jídel M = {1, …,100}, 
+pracovních dnů D= {1, …,5}, 
+c_m - cena jídla, 
+v_m {0,1} - jeslti je jídlo veganské, 
+p_m - počet proteinů v jídle, 
+p^min - minimální počet proteinů za celý týden. 
+Podmínky: 
+	- každý den 4 jídla, 
+	- alespoň 1 veganské, 
+	- minimalizace costu za celý týden, 
+	- každé jídlo max jednou za celý týden. 
+       - Pocet porci kazdeho jidla z menu je presne 120 
+	- Jakákoliv kombinace z jídel v menu za ten týden (1 jídlo denně), musí mít v součtu alespoň p_min proteinů 
