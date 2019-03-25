@@ -11,3 +11,11 @@ Podmínky:
 	- každé jídlo max jednou za celý týden. 
        - Pocet porci kazdeho jidla z menu je presne 120 
 	- Jakákoliv kombinace z jídel v menu za ten týden (1 jídlo denně), musí mít v součtu alespoň p_min proteinů 
+
+min sum_i=1..5(sum_j=1..100(c_j*x_ij*120))
+s.t.:
+	sum_j=1..100(x_ij) >= 4 	i=1..5
+	sum_j=1..100(x_ij*v_j) >= 1 	i=1..5
+	sum_i=1..5(x_ij) <= 1		j=1..100
+	sum_i=1..100(x_ij*p_i) >= p^min j=1..5
+	
