@@ -18,4 +18,6 @@ s.t.:
 	sum_j=1..100(x_ij*v_j) >= 1 	i=1..5
 	sum_i=1..5(x_ij) <= 1		j=1..100
 	sum_i=1..100(x_ij*p_i) >= p^min j=1..5
-	
+
+vars:
+	x in {0,1}
